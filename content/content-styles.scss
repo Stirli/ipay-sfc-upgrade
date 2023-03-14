@@ -1,12 +1,27 @@
-$primary: #009646;
-$borderRadius: 8px;
+@import "scss/variables";
+@import "scss/styles";
 
-@mixin hover {
-  background: $primary !important;
-  a {
-    color: white !important;
+@mixin hoverable {
+  &:hover {
+    background: $primary !important;
+    color: white;
+    transition: all 400ms ease !important;
+
+    a {
+      transition: all 400ms ease !important;
+    }
+
+    a {
+      color: white !important;
+    }
+
+    .material-mso-button {
+      border: 1px white solid;
+    }
   }
-  transition: all 400ms ease !important;
+  .material-mso-button {
+    border: 1px transparent solid;
+  }
 }
 
 .oak {
@@ -14,10 +29,10 @@ $borderRadius: 8px;
     ul {
       display: block !important;
 
-      .oak__leaf:hover {
-        @include hover;
+      .oak__leaf {
+        @include hoverable;
         border-radius: 4px !important;
-        &::before{
+        &:hover::before {
           background: white !important;
         }
       }
@@ -27,8 +42,6 @@ $borderRadius: 8px;
 
 #table {
   tr {
-    &:hover {
-      @include hover;
-    }
+    @include hoverable;
   }
 }

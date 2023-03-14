@@ -1,0 +1,34 @@
+$primary: #009646;
+$borderRadius: 8px;
+
+@mixin hover {
+  background: $primary !important;
+  a {
+    color: white !important;
+  }
+  transition: all 400ms ease !important;
+}
+
+.oak {
+  .oak__branch {
+    ul {
+      display: block !important;
+
+      .oak__leaf:hover {
+        @include hover;
+        border-radius: 4px !important;
+        &::before{
+          background: white !important;
+        }
+      }
+    }
+  }
+}
+
+#table {
+  tr {
+    &:hover {
+      @include hover;
+    }
+  }
+}

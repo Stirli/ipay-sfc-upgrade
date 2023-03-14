@@ -1,0 +1,21 @@
+.oak .oak__branch ul {
+  display: block !important;
+}
+.oak .oak__branch ul .oak__leaf:hover {
+  background: #009646 !important;
+  transition: all 400ms ease !important;
+  border-radius: 4px !important;
+}
+.oak .oak__branch ul .oak__leaf:hover a {
+  color: #fff !important;
+}
+.oak .oak__branch ul .oak__leaf:hover::before {
+  background: #fff !important;
+}
+#table tr:hover {
+  background: #009646 !important;
+  transition: all 400ms ease !important;
+}
+#table tr:hover a {
+  color: #fff !important;
+}

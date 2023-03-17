@@ -3,7 +3,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
+const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -15,35 +15,33 @@ const config = {
     background: "./app/background/background.js",
     options: "./app/options/options.js",
     popup: "./app/popup/popup.js",
-    "content": "./content/content.js",
+    content: "./content/content.js",
   },
   output: {
-    clean:true,
+    clean: true,
     path: path.resolve(__dirname, "public"),
-    filename: '[name].js',
+    filename: "[name].js",
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new CopyPlugin({
-      patterns: [
-        { from: "base", to: "./" },
-      ],
+      patterns: [{ from: "base", to: "./" }],
     }),
     new HtmlWebpackPlugin({
       inject: false,
       minify: false,
       scriptLoading: "blocking",
-      template:"app/popup/popup.html",
-      filename:"popup.html"
+      template: "app/popup/popup.html",
+      filename: "popup.html",
     }),
     new HtmlWebpackPlugin({
       inject: false,
       minify: false,
       scriptLoading: "blocking",
-      template:"app/options/options.html",
-      filename:"options.html"
+      template: "app/options/options.html",
+      filename: "options.html",
     }),
-    new HtmlWebpackTagsPlugin({ tags: ['[name].js', '[name].css']})
+    new HtmlWebpackTagsPlugin({ tags: ["[name].js", "[name].css"] }),
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
@@ -70,6 +68,7 @@ const config = {
       // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
+  experiments: { topLevelAwait: true },
 };
 
 module.exports = () => {

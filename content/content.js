@@ -4,13 +4,18 @@ import { ModulesList } from "./modules/ModulesList";
 import { LayoutMaker } from "./modules/LayoutMaker";
 import { DataProvider } from "./model/DataProvider";
 import { LastPageChecker } from "./modules/LastPageChecker";
+import { MenuSelector } from "./modules/MenuSelector";
+import { OrderTableStatistics } from "./modules/OrderTableStatistics";
 
 console.log("injected");
 
 var dp = new DataProvider();
-const modules = new ModulesList([new LayoutMaker(), new LastPageChecker(dp)]);
-
-modules.beforeLoad();
+const modules = new ModulesList([
+  new LastPageChecker(dp),
+  new LayoutMaker(),
+  new MenuSelector(),
+  new OrderTableStatistics()
+]);
 
 // $(document).load(function () {
 

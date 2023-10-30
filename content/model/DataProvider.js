@@ -13,4 +13,8 @@ export class DataProvider {
   async setLastPage({ lastClass, lastTab }) {
     this.#cds.set({ lastPage: { lastClass, lastTab } });
   }
+
+  async getMenu(date){
+    return Promise.resolve();
+  }
 }

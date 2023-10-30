@@ -25,22 +25,31 @@
 }
 
 .oak {
+  li {
+    padding-left: 0 !important;
+    &:not(.oak__leaf) {
+      padding-left: 20px !important;
+    }
+  }
   .oak__branch {
-    ul {
-      display: block !important;
-
-      .oak__leaf {
-        @include hoverable;
-        border-radius: 4px !important;
-        &:hover::before {
-          background: white !important;
-        }
+    display: block !important;
+    .oak__branch__parallel {
+      display: flex !important;
+      flex-wrap: wrap !important;
+    }
+    .oak__leaf {
+      @include hoverable;
+      border-radius: 4px !important;
+      padding: 4px !important;
+      &::before {
+        content: none;
       }
     }
   }
 }
 
-#table {
+#table,
+#stat_table {
   tr {
     @include hoverable;
   }

@@ -22,6 +22,7 @@ const config = {
     path: path.resolve(__dirname, "public"),
     filename: "[name].js",
   },
+  devtool: "inline-source-map",
   plugins: [
     new MiniCssExtractPlugin(),
     new CopyPlugin({
